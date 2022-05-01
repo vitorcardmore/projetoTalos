@@ -1,0 +1,1 @@
+web: gunicorn projetoTalos.wsgi --log-file -

@@ -10,8 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from ctypes import cast
+from email.policy import default
 from pathlib import Path
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9o-u(2rcke98vjn+s5j3-9_@@v=r_h#f_ims3@zgg$sjsb2^xv'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'projetoTalos.api'
 ]
 
 MIDDLEWARE = [
@@ -80,7 +84,16 @@ DATABASES = {
     }
 }
 
-
+firebaseConfig = {
+    'apiKey':   config('apiKey'),
+    'authDomain': config('authDomain'),
+    'databaseURL': config('databaseURL'),
+    'projectId': config('projectId'),
+    'storageBucket': config('storageBucket'),
+    'messagingSenderId': config('messagingSenderId'),
+    'appId': config('appId'),
+    'measurementId': config('measurementId')
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
