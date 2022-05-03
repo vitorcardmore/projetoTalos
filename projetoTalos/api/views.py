@@ -15,7 +15,7 @@ def getcidade(request, geocode):
     return Response(resp, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
-def prevdata(request):S
+def prevdata(request):
     data = request.data
     auth = request.GET.get('auth')
     if auth:
