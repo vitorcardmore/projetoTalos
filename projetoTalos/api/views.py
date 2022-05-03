@@ -14,11 +14,11 @@ def getcidade(request, geocode):
     resp = facade.situacao_atual_cidade(geocode)
     return Response(resp, status=status.HTTP_200_OK)
 
-@api_view(['post'])
-def prevdata(request):
+@api_view(['POST'])
+def prevdata(request):S
     data = request.data
     auth = request.GET.get('auth')
     if auth:
-        return Response({'status:200'}, status=status.HTTP_200_OK)
+        return Response({'status:200','bbbb':data}, status=status.HTTP_200_OK)
     else:
         return Response({'ala':'deumerda'})
