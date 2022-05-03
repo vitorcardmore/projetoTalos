@@ -13,3 +13,12 @@ def get_todascidades(request):
 def getcidade(request, geocode):
     resp = facade.situacao_atual_cidade(geocode)
     return Response(resp, status=status.HTTP_200_OK)
+
+@api_view(['post'])
+def prevdata(request):
+    data = request.data
+    auth = request.GET.get('auth')
+    if auth:
+        return Response({'status:200'}, status=status.HTTP_200_OK)
+    else:
+        return Response({'ala':'deumerda'})
