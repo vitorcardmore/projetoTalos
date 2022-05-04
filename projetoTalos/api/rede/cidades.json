@@ -1,0 +1,499 @@
+{
+    "3306305": {
+        "nome": "Volta_Redonda",
+        "latitude": -22.5202,
+        "longitude": -44.0996,
+        "uf": "RJ",
+        "ddd": 24
+    },
+    "3302007": {
+        "nome": "Itaguaí",
+        "latitude": -22.8636,
+        "longitude": -43.7798,
+        "uf": "RJ",
+        "ddd": 21
+    },
+    "3300100": {
+        "nome": "Angra_dos_Reis",
+        "latitude": -23.0011,
+        "longitude": -44.3196,
+        "uf": "RJ",
+        "ddd": 24
+    },
+    "3304557": {
+        "nome": "Rio_de_Janeiro",
+        "latitude": -22.9129,
+        "longitude": -43.2003,
+        "uf": "RJ",
+        "ddd": 21
+    },
+    "3303906": {
+        "nome": "Petrópolis",
+        "latitude": -22.52,
+        "longitude": -43.1926,
+        "uf": "RJ",
+        "ddd": 24
+    },
+    "3518404": {
+        "nome": "Guaratinguetá",
+        "latitude": -22.8075,
+        "longitude": -45.1938,
+        "uf": "SP",
+        "ddd": 12
+    },
+    "3138203": {
+        "nome": "Lavras",
+        "latitude": -21.248,
+        "longitude": -45.0009,
+        "uf": "MG",
+        "ddd": 35
+    },
+    "3118304": {
+        "nome": "Conselheiro_Lafaiete",
+        "latitude": -20.6634,
+        "longitude": -43.7846,
+        "uf": "MG",
+        "ddd": 31
+    },
+    "3105608": {
+        "nome": "Barbacena",
+        "latitude": -21.2214,
+        "longitude": -43.7703,
+        "uf": "MG",
+        "ddd": 32
+    },
+    "3136702": {
+        "nome": "Juiz_de_Fora",
+        "latitude": -21.7595,
+        "longitude": -43.3398,
+        "uf": "MG",
+        "ddd": 32
+    },
+    "3169901": {
+        "nome": "Ubá",
+        "latitude": -21.1204,
+        "longitude": -42.9359,
+        "uf": "MG",
+        "ddd": 32
+    },
+    "3549904": {
+        "nome": "São_José_dos_Campos",
+        "latitude": -23.1896,
+        "longitude": -45.8841,
+        "uf": "SP",
+        "ddd": 12
+    },
+    "3106200": {
+        "nome": "Belo_Horizonte",
+        "latitude": -19.9102,
+        "longitude": -43.9266,
+        "uf": "MG",
+        "ddd": 31
+    },
+    "3510500": {
+        "nome": "Caraguatatuba",
+        "latitude": -23.6125,
+        "longitude": -45.4125,
+        "uf": "SP",
+        "ddd": 12
+    },
+    "3554102": {
+        "nome": "Taubaté",
+        "latitude": -23.0104,
+        "longitude": -45.5593,
+        "uf": "SP",
+        "ddd": 12
+    },
+    "3152501": {
+        "nome": "Pouso_Alegre",
+        "latitude": -22.2266,
+        "longitude": -45.9389,
+        "uf": "MG",
+        "ddd": 35
+    },
+    "3151800": {
+        "nome": "Poços_de_Caldas",
+        "latitude": -21.78,
+        "longitude": -46.5692,
+        "uf": "MG",
+        "ddd": 35
+    },
+    "3122306": {
+        "nome": "Divinópolis",
+        "latitude": -20.1446,
+        "longitude": -44.8912,
+        "uf": "MG",
+        "ddd": 37
+    },
+    "3145208": {
+        "nome": "Nova_Serrana",
+        "latitude": -19.8713,
+        "longitude": -44.9847,
+        "uf": "MG",
+        "ddd": 37
+    },
+    "3143906": {
+        "nome": "Muriaé",
+        "latitude": -21.13,
+        "longitude": -42.3693,
+        "uf": "MG",
+        "ddd": 32
+    },
+    "3302205": {
+        "nome": "Itaperuna",
+        "latitude": -21.1997,
+        "longitude": -41.8799,
+        "uf": "RJ",
+        "ddd": 22
+    },
+    "3301009": {
+        "nome": "Campos_dos_Goytacazes",
+        "latitude": -21.7622,
+        "longitude": -41.3181,
+        "uf": "RJ",
+        "ddd": 22
+    },
+    "3302403": {
+        "nome": "Macaé",
+        "latitude": -22.3768,
+        "longitude": -41.7848,
+        "uf": "RJ",
+        "ddd": 22
+    },
+    "3300704": {
+        "nome": "Cabo_Frio",
+        "latitude": -22.8894,
+        "longitude": -42.0286,
+        "uf": "RJ",
+        "ddd": 22
+    },
+    "3201209": {
+        "nome": "Cachoeiro_de_Itapemirim",
+        "latitude": -20.8462,
+        "longitude": -41.1198,
+        "uf": "ES",
+        "ddd": 28
+    },
+    "3131307": {
+        "nome": "Ipatinga",
+        "latitude": -19.4703,
+        "longitude": -42.5476,
+        "uf": "MG",
+        "ddd": 31
+    },
+    "3131703": {
+        "nome": "Itabira",
+        "latitude": -19.6239,
+        "longitude": -43.2312,
+        "uf": "MG",
+        "ddd": 31
+    },
+    "3147907": {
+        "nome": "Passos",
+        "latitude": -20.7193,
+        "longitude": -46.609,
+        "uf": "MG",
+        "ddd": 35
+    },
+    "3530706": {
+        "nome": "Mogi_Guaçu",
+        "latitude": -22.3675,
+        "longitude": -46.9428,
+        "uf": "SP",
+        "ddd": 19
+    },
+    "3509502": {
+        "nome": "Campinas",
+        "latitude": -22.9053,
+        "longitude": -47.0659,
+        "uf": "SP",
+        "ddd": 19
+    },
+    "3525904": {
+        "nome": "Jundiaí",
+        "latitude": -23.1852,
+        "longitude": -46.8974,
+        "uf": "SP",
+        "ddd": 11
+    },
+    "3550308": {
+        "nome": "São_Paulo",
+        "latitude": -23.5329,
+        "longitude": -46.6395,
+        "uf": "SP",
+        "ddd": 11
+    },
+    "3202405": {
+        "nome": "Guarapari",
+        "latitude": -20.6772,
+        "longitude": -40.5093,
+        "uf": "ES",
+        "ddd": 27
+    },
+    "3205002": {
+        "nome": "Serra",
+        "latitude": -20.121,
+        "longitude": -40.3074,
+        "uf": "ES",
+        "ddd": 27
+    },
+    "3200607": {
+        "nome": "Aracruz",
+        "latitude": -19.82,
+        "longitude": -40.2764,
+        "uf": "ES",
+        "ddd": 27
+    },
+    "3205309": {
+        "nome": "Vitória",
+        "latitude": -20.3155,
+        "longitude": -40.3128,
+        "uf": "ES",
+        "ddd": 27
+    },
+    "3127701": {
+        "nome": "Governador_Valadares",
+        "latitude": -18.8545,
+        "longitude": -41.9555,
+        "uf": "MG",
+        "ddd": 33
+    },
+    "3148004": {
+        "nome": "Patos_de_Minas",
+        "latitude": -18.5699,
+        "longitude": -46.5013,
+        "uf": "MG",
+        "ddd": 34
+    },
+    "3104007": {
+        "nome": "Araxá",
+        "latitude": -19.5902,
+        "longitude": -46.9438,
+        "uf": "MG",
+        "ddd": 34
+    },
+    "3516200": {
+        "nome": "Franca",
+        "latitude": -20.5352,
+        "longitude": -47.4039,
+        "uf": "SP",
+        "ddd": 16
+    },
+    "3543402": {
+        "nome": "Ribeirão_Preto",
+        "latitude": -21.1699,
+        "longitude": -47.8099,
+        "uf": "SP",
+        "ddd": 16
+    },
+    "3503208": {
+        "nome": "Araraquara",
+        "latitude": -21.7845,
+        "longitude": -48.178,
+        "uf": "SP",
+        "ddd": 16
+    },
+    "3538709": {
+        "nome": "Piracicaba",
+        "latitude": -22.7338,
+        "longitude": -47.6476,
+        "uf": "SP",
+        "ddd": 19
+    },
+    "3552205": {
+        "nome": "Sorocaba",
+        "latitude": -23.4969,
+        "longitude": -47.4451,
+        "uf": "SP",
+        "ddd": 15
+    },
+    "3203205": {
+        "nome": "Linhares",
+        "latitude": -19.3946,
+        "longitude": -40.0643,
+        "uf": "ES",
+        "ddd": 27
+    },
+    "3204906": {
+        "nome": "São_Mateus",
+        "latitude": -18.7214,
+        "longitude": -39.8579,
+        "uf": "ES",
+        "ddd": 27
+    },
+    "3168606": {
+        "nome": "Teófilo_Otoni",
+        "latitude": -17.8595,
+        "longitude": -41.5087,
+        "uf": "MG",
+        "ddd": 33
+    },
+    "3170206": {
+        "nome": "Uberlândia",
+        "latitude": -18.9141,
+        "longitude": -48.2749,
+        "uf": "MG",
+        "ddd": 34
+    },
+    "3170107": {
+        "nome": "Uberaba",
+        "latitude": -19.7472,
+        "longitude": -47.9381,
+        "uf": "MG",
+        "ddd": 34
+    },
+    "3505500": {
+        "nome": "Barretos",
+        "latitude": -20.5531,
+        "longitude": -48.5698,
+        "uf": "SP",
+        "ddd": 17
+    },
+    "3549805": {
+        "nome": "São_José_do_Rio_Preto",
+        "latitude": -20.8113,
+        "longitude": -49.3758,
+        "uf": "SP",
+        "ddd": 17
+    },
+    "3506003": {
+        "nome": "Bauru",
+        "latitude": -22.3246,
+        "longitude": -49.0871,
+        "uf": "SP",
+        "ddd": 14
+    },
+    "3201506": {
+        "nome": "Colatina",
+        "latitude": -19.5493,
+        "longitude": -40.6269,
+        "uf": "ES",
+        "ddd": 27
+    },
+    "3541406": {
+        "nome": "Presidente_Prudente",
+        "latitude": -22.1207,
+        "longitude": -51.3925,
+        "uf": "SP",
+        "ddd": 18
+    },
+    "3502804": {
+        "nome": "Araçatuba",
+        "latitude": -21.2076,
+        "longitude": -50.4401,
+        "uf": "SP",
+        "ddd": 18
+    },
+    "3522307": {
+        "nome": "Itapetininga",
+        "latitude": -23.5886,
+        "longitude": -48.0483,
+        "uf": "SP",
+        "ddd": 15
+    },
+    "3134202": {
+        "nome": "Ituiutaba",
+        "latitude": -18.9772,
+        "longitude": -49.4639,
+        "uf": "MG",
+        "ddd": 34
+    },
+    "3143302": {
+        "nome": "Montes_Claros",
+        "latitude": -16.7282,
+        "longitude": -43.8578,
+        "uf": "MG",
+        "ddd": 38
+    },
+    "3170701": {
+        "nome": "Varginha",
+        "latitude": -21.5556,
+        "longitude": -45.4364,
+        "uf": "MG",
+        "ddd": 35
+    },
+    "3101706": {
+        "nome": "Almenara",
+        "latitude": -16.1785,
+        "longitude": -40.6942,
+        "uf": "MG",
+        "ddd": 33
+    },
+    "3135100": {
+        "nome": "Janaúba",
+        "latitude": -15.8022,
+        "longitude": -43.3132,
+        "uf": "MG",
+        "ddd": 38
+    },
+    "3151206": {
+        "nome": "Pirapora",
+        "latitude": -17.3392,
+        "longitude": -44.934,
+        "uf": "MG",
+        "ddd": 38
+    },
+    "3147006": {
+        "nome": "Paracatu",
+        "latitude": -17.2252,
+        "longitude": -46.8711,
+        "uf": "MG",
+        "ddd": 38
+    },
+    "3135209": {
+        "nome": "Januária",
+        "latitude": -15.4802,
+        "longitude": -44.3639,
+        "uf": "MG",
+        "ddd": 38
+    },
+    "3170404": {
+        "nome": "Unaí",
+        "latitude": -16.3592,
+        "longitude": -46.9022,
+        "uf": "MG",
+        "ddd": 38
+    },
+    "3170529": {
+        "nome": "Urucuia",
+        "latitude": -16.1244,
+        "longitude": -45.7352,
+        "uf": "MG",
+        "ddd": 38
+    },
+    "3171600": {
+        "nome": "Virgem_da_Lapa",
+        "latitude": -16.807,
+        "longitude": -42.3431,
+        "uf": "MG",
+        "ddd": 33
+    },
+    "3137700": {
+        "nome": "Lajinha",
+        "latitude": -20.1539,
+        "longitude": -41.6228,
+        "uf": "MG",
+        "ddd": 33
+    },
+    "3534708": {
+        "nome": "Ourinhos",
+        "latitude": -22.9797,
+        "longitude": -49.8697,
+        "uf": "SP",
+        "ddd": 14
+    },
+    "3509254": {
+        "nome": "Cajati",
+        "latitude": -24.7324,
+        "longitude": -48.1223,
+        "uf": "SP",
+        "ddd": 13
+    },
+    "3121605": {
+        "nome": "Diamantina",
+        "latitude": -18.2413,
+        "longitude": -43.6031,
+        "uf": "MG",
+        "ddd": 38
+    }
+}
