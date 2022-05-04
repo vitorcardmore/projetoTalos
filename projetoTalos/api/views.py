@@ -7,7 +7,7 @@ import json
 import pickle
 import sklearn
 from sklearn.preprocessing import StandardScaler
-from projetoTalos.settings import BASE_DIR
+from projetoTalos.settings import BASE_DIR, ACESSPREV
 import numpy
 from datetime import datetime
 import pytz
@@ -64,7 +64,7 @@ def getcidade(request, geocode):
 def prevdata(request):
     reqdata = request.data
 
-    if reqdata['acessprev'] == 'rr':
+    if reqdata['acessprev'] == ACESSPREV:
 
         # cpnfiguração de data e hora
         tz_sp = pytz.timezone('America/Sao_Paulo')

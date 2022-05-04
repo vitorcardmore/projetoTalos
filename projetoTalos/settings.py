@@ -94,6 +94,8 @@ firebaseConfig = {
     'appId': config('appId'),
     'measurementId': config('measurementId')
 }
+
+ACESSPREV = config('ACESSPREV')
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
