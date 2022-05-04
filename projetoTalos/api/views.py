@@ -98,7 +98,7 @@ async def req(session, url, cidade, prever, dados, ordemcidade):
             dados[cidade] = {
                     'temperatura': temperatura, 
                     'umidadeRelativaDoAr':umidade,
-                    'velocidadeDoVento':ventovelo,
+                    'velocidadeDoVento':round(ventovelo,3),
                     'temperaturaDoAr':tempar,
                     'indiceUv':uv, 
                     'pressao': pressao ,
@@ -124,6 +124,14 @@ async def main(cidadescord, prever, dados, ordemcidade, chaves):
 @api_view(['GET',])
 def sendDataForBi(request):
     resp = facade.situacaodeplotagembi()
+    if resp:
+        return Response(resp, status=status.HTTP_200_OK)
+    else:
+        return Response({'status':'400','desc':'bad request'}, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET',])
+def gethist(request):
+    resp = facade.get_historico_todas_cidades()
     if resp:
         return Response(resp, status=status.HTTP_200_OK)
     else:
