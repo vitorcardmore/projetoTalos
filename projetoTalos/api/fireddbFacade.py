@@ -39,6 +39,7 @@ def situacaodeplotagembi():
           chaveaterior = max(chaves)
           atual = cidade['historico'][dia][chave]
           anterior = cidade['historico'][dia][chaveaterior]
+          atual['nome'] = atual['nome'].replace('_',' ')
           del cidade['historico']
           resp.append({'horaultimaAtualizacao':f'{chave}:00', 'DataUltimaAtualizacao':dia ,'variacao':round(atual['temperatura']-anterior['temperatura'],2), **atual, **cidade})
         return resp 
