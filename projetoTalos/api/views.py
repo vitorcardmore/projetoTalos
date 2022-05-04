@@ -26,39 +26,6 @@ def getcidade(request, geocode):
     resp = facade.situacao_atual_cidade(geocode)
     return Response(resp, status=status.HTTP_200_OK)
 
-# @api_view(['POST',])
-# def prevdata(request):
-#     data = request.data
-#     auth = request.GET.get('auth')
-#     prever = []
-#     dados = []
-#     ordemcidade = []
-#     rede_neural = pickle.load(open(f'{BASE_DIR}/projetoTalos/api/rede/rede_neural.sav', 'rb'))
-#     if auth == '245645619178715465464894651489476519465':
-#         for cidade,info in data.items():
-            
-#             lista = [info['precipitacao'],info['temperaturaDoAr'], info['umidadeRelativaDoAr'], info['velocidadeDoVento']]
-#             prever.append(lista)
-#             ordemcidade.append(cidade)
-#             dados.append(info)
-#         scaler = StandardScaler()
-#         s = scaler.fit_transform(prever)
-#         resultado = rede_neural.predict(s)
-
-#         up ={}
-#         for i, t in enumerate(ordemcidade):
-#             dados[i]["rf"] = int(resultado[i])
-#             data[f'cidades/{t}/historico/ldsdsads/dasdasdsdas'] = dados[i]
-        
-#         path  = 'https://talos-38497-default-rtdb.firebaseio.com/.json'
-#         headers = {'content-type': 'application/json; charset=UTF-8'}
-
-#         r = requests.patch(path, headers=headers, data=json.dumps(up, **{}).encode("utf-8")) 
-#         return Response(r.tex, status=status.HTTP_200_OK)
-#     else:
-#         for cidade,info in data.items():
-#             print(cidade)
-#         return Response('a', status=status.HTTP_200_OK)
 
 @api_view(['POST',])
 def prevdata(request):
@@ -153,3 +120,11 @@ async def main(cidadescord, prever, dados, ordemcidade, chaves):
             url = f'https://atlas.microsoft.com/weather/currentConditions/json?api-version=1.0&query={scordd}&subscription-key={chave}&language=pt-br'
             tasks.append(asyncio.ensure_future(req(session, url, cidade, prever, dados, ordemcidade)))      
         await asyncio.gather(*tasks)
+
+@api_view(['GET',])
+def sendDataForBi(request):
+    resp = facade.situacaodeplotagembi()
+    if resp:
+        return Response(resp, status=status.HTTP_200_OK)
+    else:
+        return Response({'status':'400','desc':'bad request'}, status=status.HTTP_400_BAD_REQUEST)

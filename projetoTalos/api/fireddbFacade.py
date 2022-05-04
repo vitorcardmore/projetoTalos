@@ -23,3 +23,22 @@ def situacao_atual_cidade(geocode):
   atual = cidade['historico'][dia][chave]
   return {cidade["nome"]:{'ultimaAtualizacao':f'{chave}:00','situacao':atual}}
 
+def situacaodeplotagembi():
+    todosget = db.child('cidades').get().val()
+    if todosget:
+      resp = []
+      try:
+        todos = dict(todosget)
+      except:
+        return None
+      else:
+        for cidade in todos.values():
+          chaves = list(cidade['historico'][dia].keys())
+          chave = max(chaves)
+          chaves.remove(chave)
+          chaveaterior = max(chaves)
+          atual = cidade['historico'][dia][chave]
+          anterior = cidade['historico'][dia][chaveaterior]
+          del cidade['historico']
+          resp.append({'horaultimaAtualizacao':f'{chave}:00', 'DataUltimaAtualizacao':dia ,'variacao':round(atual['temperatura']-anterior['temperatura'],2), **atual, **cidade})
+        return resp 
