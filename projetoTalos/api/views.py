@@ -18,8 +18,11 @@ import requests
 
 @api_view(['GET'])
 def get_todascidades(request):
-    resp = facade.situacao_atual_todas_cidades()
-    return Response(resp, status=status.HTTP_200_OK)
+    resp = facade.situacaodeplotagembi()
+    if resp:
+        return Response(resp, status=status.HTTP_200_OK)
+    else:
+        return Response({'status':'400','desc':'bad request'}, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
 def getcidade(request, geocode):
