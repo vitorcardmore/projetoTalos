@@ -46,17 +46,26 @@ def situacaodeplotagembi():
       return None
     else:
       for cidade in todos.values():
-        ultimodia = max((cidade['historico'].keys()))
-        chaves = list(cidade['historico'][ultimodia].keys())
-        chave = max(chaves)
-        chaves.remove(chave)
-        chaveaterior = max(chaves)
-        ultimaat = cidade['historico'][ultimodia][chave]
-        anterior = cidade['historico'][ultimodia][chaveaterior]
+
+        historico = list(cidade['historico'].keys())
+        diaatual = historico.pop()
+
+        horas = list(cidade['historico'][diaatual].keys())
+        horaatual = horas.pop()
+        
+        if horas:
+          diaanterior = diaatual
+          horaanterior = horas.pop()
+        else:
+          diaanterior = historico.pop()
+          horaanterior = list(cidade['historico'][diaanterior].keys()).pop()
+        
+        ultimaat = cidade['historico'][diaatual][horaatual]
+        anterior = cidade['historico'][diaanterior][horaanterior]
         cidade['nome'] = cidade['nome'].replace('_',' ')
         del cidade['historico']
-        date = datetime.strptime(ultimodia, "%Y%m%d").date()
-        resp.append({'horaultimaAtualizacao':f'{chave}:00', 'DataUltimaAtualizacao':str(date).replace('-','/') ,'variacao':round(ultimaat['temperatura']-anterior['temperatura'],2), **ultimaat, **cidade})
+        date = datetime.strptime(diaatual, "%Y%m%d").date()
+        resp.append({'horaultimaAtualizacao':f'{horaatual}:00', 'DataUltimaAtualizacao':str(date).replace('-','/') ,'variacao':round(ultimaat['temperatura']-anterior['temperatura'],2), **ultimaat, **cidade})
       return resp
 
 
