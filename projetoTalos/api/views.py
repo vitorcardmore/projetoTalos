@@ -18,7 +18,7 @@ import requests
 
 @api_view(['GET'])
 def get_todascidades(request):
-    resp = facade.situacaodeplotagembi()
+    resp = facade.situacao_atual_todas_cidades()
     if resp:
         return Response(resp, status=status.HTTP_200_OK)
     else:
@@ -137,7 +137,22 @@ def sendDataForBi(request):
 
 @api_view(['GET',])
 def gethist(request):
-    resp = facade.get_historico_todas_cidades()
+    uf = request.GET.get('uf')
+    ddd = request.GET.get('ddd')
+    ini = request.GET.get('ini')
+    fim = request.GET.get('fim')
+    resp = facade.get_historico_todas_cidades(uf, ddd, ini, fim)
+    if resp:
+        return Response(resp, status=status.HTTP_200_OK)
+    else:
+        return Response({'status':'400','desc':'bad request'}, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET',])
+def gethistcidade(request,geocode):
+
+    ini = request.GET.get('ini')
+    fim = request.GET.get('fim')
+    resp = facade.get_historico_cidade(ini, fim, geocode)
     if resp:
         return Response(resp, status=status.HTTP_200_OK)
     else:

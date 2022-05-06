@@ -25,13 +25,14 @@ def situacao_atual_todas_cidades():
         return resp
 
 def situacao_atual_cidade(geocode):
-    cidade = dict(db.child('cidades').child(geocode).get().val())
+    cidade = db.child('cidades').child(geocode).get().val()
     if cidade:
       try:
-          ultimodia = max(tuple(cidade['historico'].keys()))
+          cidade = dict(cidade)
       except:
           return None
       else:
+          ultimodia = max(tuple(cidade['historico'].keys()))
           chave = max(tuple(cidade['historico'][ultimodia].keys()))
           atual = cidade['historico'][ultimodia][chave]
           return {cidade["nome"]:{'ultimaAtualizacao':{'dia':ultimodia, 'hora':f'{chave}:00'},'situacao':atual}}
@@ -65,12 +66,25 @@ def situacaodeplotagembi():
         cidade['nome'] = cidade['nome'].replace('_',' ')
         del cidade['historico']
         date = datetime.strptime(diaatual, "%Y%m%d").date()
-        resp.append({'horaultimaAtualizacao':f'{horaatual}:00', 'DataUltimaAtualizacao':str(date).replace('-','/') ,'variacao':round(ultimaat['temperatura']-anterior['temperatura'],2), **ultimaat, **cidade})
+
+        resp.append({'horaultimaAtualizacao':f'{horaatual}:00', 
+        'DataUltimaAtualizacao':str(date).replace('-','/') ,
+        'variacao':round(ultimaat['temperatura']-anterior['temperatura'],2), 
+        **ultimaat, **cidade})
+
       return resp
 
 
-def get_historico_todas_cidades():
-  todosget = db.child('cidades').get().val()
+def get_historico_todas_cidades(uf,ddd, ini, fim):
+
+  if ddd:
+    todosget = db.child("cidades").order_by_child("ddd").equal_to(int(ddd)).get().val()
+    print(todosget)
+  elif uf:
+    todosget = db.child("cidades").order_by_child("uf").equal_to(uf).get().val()
+  else:
+    todosget = db.child('cidades').get().val()
+
   if todosget:
     try:
       todos = dict(todosget)
@@ -78,3 +92,19 @@ def get_historico_todas_cidades():
       return None
     else:
       return todos
+
+def get_historico_cidade(ini, fim, geocode):
+    histcidade =  db.child('cidades').child(geocode).get().val()
+    def datarange(val, defa):
+      if val == None: 
+        return defa
+      else: 
+        return val
+    if ini != None or fim != None:
+      ini = datarange(ini,'0')
+      tz_sp = pytz.timezone('America/Sao_Paulo')
+      dia = datetime.now(tz_sp).strftime("%Y%m%d")
+      fim = datarange(fim,dia)
+      histcidade['historico'] = db.child('cidades').child(geocode).child('historico').order_by_key().start_at(ini).end_at(fim).get().val()
+
+    return histcidade
