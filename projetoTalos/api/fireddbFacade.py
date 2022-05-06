@@ -26,10 +26,15 @@ def situacao_atual_todas_cidades():
 
 def situacao_atual_cidade(geocode):
     cidade = dict(db.child('cidades').child(geocode).get().val())
-    chaves = tuple(cidade['historico'][dia].keys())
-    chave = min(chaves)
-    atual = cidade['historico'][dia][chave]
-    return {cidade["nome"]:{'ultimaAtualizacao':f'{chave}:00','situacao':atual}}
+    if cidade:
+      try:
+          ultimodia = max(tuple(cidade['historico'].keys()))
+      except:
+          return None
+      else:
+          chave = max(tuple(cidade['historico'][ultimodia].keys()))
+          atual = cidade['historico'][ultimodia][chave]
+          return {cidade["nome"]:{'ultimaAtualizacao':{'dia':ultimodia, 'hora':f'{chave}:00'},'situacao':atual}}
 
 def situacaodeplotagembi():
   todosget = db.child('cidades').get().val()

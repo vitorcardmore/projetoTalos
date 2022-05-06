@@ -27,7 +27,10 @@ def get_todascidades(request):
 @api_view(['GET'])
 def getcidade(request, geocode):
     resp = facade.situacao_atual_cidade(geocode)
-    return Response(resp, status=status.HTTP_200_OK)
+    if resp:
+        return Response(resp, status=status.HTTP_200_OK)
+    else:
+        return Response({'status':'400','desc':'bad request'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['POST',])

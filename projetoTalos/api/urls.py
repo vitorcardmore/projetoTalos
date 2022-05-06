@@ -5,6 +5,6 @@ urlpatterns = [
     path('', get_todascidades, name='get_todascidades'),
     path('forbi/', sendDataForBi, name='sendDataForBi'),
     path('<str:geocode>/', getcidade,name='getcidade' ),
-    path('prever', prevdata, name='prevdata'),
+    path('prever/', prevdata, name='prevdata'),
     path('historico',gethist, name='gethist')
 ]
