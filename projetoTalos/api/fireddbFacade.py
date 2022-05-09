@@ -1,5 +1,5 @@
 from projetoTalos.api.models import db
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 
 tz_sp = pytz.timezone('America/Sao_Paulo')
@@ -74,6 +74,18 @@ def situacaodeplotagembi():
 
       return resp
 
+def datarange(val, defa):
+      if val == None: 
+        return defa
+      else: 
+        return val
+
+def dataper(ini, fim):
+  date = datetime.strptime(ini, "%Y%m%d")
+  datafim = datetime.strptime(fim, "%Y%m%d")
+  while date <= datafim:
+    yield datetime.strftime(date, "%Y%m%d")
+    date = date + timedelta(days=1)
 
 def get_historico_todas_cidades(uf,ddd, ini, fim):
 
@@ -90,15 +102,24 @@ def get_historico_todas_cidades(uf,ddd, ini, fim):
     except:
       return None
     else:
+      if ini != None or fim != None:
+        ini = datarange(ini,'20220501')
+        tz_sp = pytz.timezone('America/Sao_Paulo')
+        dia = datetime.now(tz_sp).strftime("%Y%m%d")
+        fim = datarange(fim,dia)  
+        for j in todos.keys():
+          t = dict()
+          for i in dataper(ini, fim):
+            try:  
+              t[i] = todos[j]['historico'][i]
+            except KeyError:
+              continue
+          todos[j]['historico'] = t
       return todos
 
 def get_historico_cidade(ini, fim, geocode):
     histcidade =  db.child('cidades').child(geocode).get().val()
-    def datarange(val, defa):
-      if val == None: 
-        return defa
-      else: 
-        return val
+    
     if ini != None or fim != None:
       ini = datarange(ini,'0')
       tz_sp = pytz.timezone('America/Sao_Paulo')
