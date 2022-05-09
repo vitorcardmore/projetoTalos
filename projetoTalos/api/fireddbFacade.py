@@ -8,20 +8,20 @@ dia = datetime.now(tz_sp).strftime("%Y%m%d")
 def situacao_atual_todas_cidades():
     todosget = db.child('cidades').get().val()
     if todosget:
-      resp = []
+      resp = {}
       try:
         todos = dict(todosget)
       except:
         return None
       else:
-        for cidade in todos.values():
+        for cod, cidade in todos.items():
           ultimodia = max((cidade['historico'].keys()))
           chaves = list(cidade['historico'][ultimodia].keys())
           chave = max(chaves)
           ultimaat = cidade['historico'][ultimodia][chave]
           cidade['nome'] = cidade['nome'].replace('_',' ')
           del cidade['historico']
-          resp.append({'horaultimaAtualizacao':f'{chave}:00', 'DataUltimaAtualizacao':ultimodia, **ultimaat, **cidade})
+          resp[cod] = {'horaultimaAtualizacao':f'{chave}:00', 'DataUltimaAtualizacao':ultimodia, **ultimaat, **cidade}
         return resp
 
 def situacao_atual_cidade(geocode):
@@ -79,7 +79,6 @@ def get_historico_todas_cidades(uf,ddd, ini, fim):
 
   if ddd:
     todosget = db.child("cidades").order_by_child("ddd").equal_to(int(ddd)).get().val()
-    print(todosget)
   elif uf:
     todosget = db.child("cidades").order_by_child("uf").equal_to(uf).get().val()
   else:
