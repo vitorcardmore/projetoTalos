@@ -18,7 +18,9 @@ import requests
 
 @api_view(['GET'])
 def get_todascidades(request):
-    resp = facade.situacao_atual_todas_cidades()
+    uf = request.GET.get('uf')
+    ddd = request.GET.get('ddd')
+    resp = facade.situacao_atual_todas_cidades(uf, ddd)
     if resp:
         return Response(resp, status=status.HTTP_200_OK)
     else:
@@ -72,7 +74,7 @@ def prevdata(request):
 
         r = requests.patch(path, headers=headers, data=json.dumps(data, **{}).encode("utf-8"))
         if r.status_code == 200:
-            return Response({'status':'200','desc':'sucesso', 'dados atualizados':r.text}, status=status.HTTP_200_OK)
+            return Response({'status':'200','desc':'sucesso', 'dados atualizados':r.text}, sexittatus=status.HTTP_200_OK)
         else:
             return Response({'status':'400','desc':'bad request'}, status=status.HTTP_400_BAD_REQUEST)
     else:

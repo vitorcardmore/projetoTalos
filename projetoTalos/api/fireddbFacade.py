@@ -5,8 +5,14 @@ import pytz
 tz_sp = pytz.timezone('America/Sao_Paulo')
 dia = datetime.now(tz_sp).strftime("%Y%m%d")
 
-def situacao_atual_todas_cidades():
-    todosget = db.child('cidades').get().val()
+def situacao_atual_todas_cidades(uf, ddd):
+    if ddd:
+      todosget = db.child("cidades").order_by_child("ddd").equal_to(int(ddd)).get().val()
+    elif uf:
+      todosget = db.child("cidades").order_by_child("uf").equal_to(uf).get().val()
+    else:
+      todosget = db.child('cidades').get().val()
+
     if todosget:
       resp = {}
       try:
