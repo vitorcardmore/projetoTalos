@@ -7,41 +7,58 @@
 <div class="container d-flex justify-content-center">
     <div class="row">
 	<div class="card text-center mt-5">
-        
-        <h5 class="card-title">Datdos atuais de todas as cidades</h5>
+         
+        <h2 class="card-title">Dados atuais de todas as cidades</h2>
        
         <div class="card-body">
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="{% url 'get_todascidades'%}" class="btn btn-primary">Ver exemplo</a>
+          <p class="card-text">Para realizar a consulta dos dados atuais de todas as cidades disponíveis no banco de dados
+          </p>
+            <p class="card-text">  O retorno dos dados será realizado no formato Json, contendo as últimas informações coletadas de
+              cada cidade </p>
+          <h5><span class="badge bg-success">GET</span> http://projetotalos.herokuapp.com/api/atual/</h5>
+          <a href="{% url 'get_todascidades'%}" class="btn btn-primary" target="_blank">Ver exemplo</a>
         </div>
     </div>
     <div class="card text-center mt-5">
         
-        <h5 class="card-title">Datdos atuais de uma cidade especifica</h5>
+        <h2 class="card-title">Dados atuais de uma cidade especifica</h2>
   
         <div class="card-body">
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="{% url 'getcidade' '3306305'%}" class="btn btn-primary">Ver exemplo</a>
+          <p class="card-text">Para realizar a consulta dos dados atuais de uma cidade especifica, a consulta deve ser realizada através do código do IBGE para a cidade, 
+            uma vez que este é um identificador único de cada cidade brasileira </p>
+          <p class="card-text">O retorno dos dados será realizado no formato Json, contendo as últimas informações coletadas da cidade </p>
+          
+          <h5><span class="badge bg-success">GET</span> http://projetotalos.herokuapp.com/api/atual/codigoibge/</h5>
+
+          <a href="{% url 'getcidade' '3306305'%}" class="btn btn-primary" target="_blank">Ver exemplo</a>
         </div>
     </div>
 
     <div class="card text-center mt-5">
      
-        <h5 class="card-title">dados historicos de todas as cidades</h5>
+        <h2 class="card-title">Dados historicos de todas as cidades</h2>
    
         <div class="card-body">
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="{% url 'gethist'%}" class="btn btn-primary">Ver exemplo</a>
+          <p class="card-text">Para realizar a consulta dos dados históricos de todas as cidades disponíveis no banco de dados</p>
+
+          <p class="card-text">O retorno dos dados será realizado no formato Json, contendo as informações históricas coletadas das cidades</p>
+
+          <h5><span class="badge bg-success">GET</span> http://projetotalos.herokuapp.com/api/historico/</h5>
+          <a href="{% url 'gethist'%}" class="btn btn-primary" target="_blank">Ver exemplo</a>
         </div>
     </div>
 
-    <div class="card text-center mt-5"> 
+    <div class="card text-center mt-5 mb-5"> 
 
-        <h5 class="card-title">dados historicos de uma cidade especifica</h5>
+        <h2 class="card-title">Dados historicos de uma cidade especifica</h2>
   
         <div class="card-body">
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="{% url 'gethistcidade' '3306305'%}" class="btn btn-primary">Ver exemplo</a>
+          <p class="card-text">Para realizar a consulta dos dados históricos  de uma cidade especifica, a consulta deve ser realizada através do código do IBGE para a cidade, 
+            uma vez que este é um identificador único de cada cidade brasileira </p>
+
+            <p class="card-text">O retorno dos dados será realizado no formato Json, contendo as informações históricas coletadas da cidade </p>
+          <h5><span class="badge bg-success">GET</span> http://projetotalos.herokuapp.com/api/historico/codigoibge/</h5>
+          <a href="{% url 'gethistcidade' '3306305'%}" class="btn btn-primary" target="_blank">Ver exemplo</a>
         </div>
     </div>
     </div>
