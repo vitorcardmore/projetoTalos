@@ -123,7 +123,7 @@ async def main(cidadescord, prever, dados, ordemcidade, chaves):
         tasks = []
         for i,t in enumerate(cidadescord.items()):
             cidade, cordenada = t
-            chave = chaves[int(i%2 == 0)]
+            chave = '3jPJR_BwjQwsEmB88XLZxMJBJVSC-slHGS3B_G5uiao'
             scordd = f'{cordenada["latitude"]},{cordenada["longitude"]}'
             url = f'https://atlas.microsoft.com/weather/currentConditions/json?api-version=1.0&query={scordd}&subscription-key={chave}&language=pt-br'
             tasks.append(asyncio.ensure_future(req(session, url, cidade, prever, dados, ordemcidade)))      

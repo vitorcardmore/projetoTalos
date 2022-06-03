@@ -91,7 +91,7 @@ def dataper(ini, fim):
   datafim = datetime.strptime(fim, "%Y%m%d")
   while date <= datafim:
     yield datetime.strftime(date, "%Y%m%d")
-    date = date + timedelta(days=1)
+    date = date + timedelta(days=1) 
 
 def get_historico_todas_cidades(uf,ddd, ini, fim):
 

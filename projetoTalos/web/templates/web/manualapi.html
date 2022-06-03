@@ -1,0 +1,50 @@
+{% extends 'web/base.html' %}
+{% load static%}
+
+{% block titulo %}Dashboard{% endblock titulo %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <div class="row">
+	<div class="card text-center mt-5">
+        
+        <h5 class="card-title">Datdos atuais de todas as cidades</h5>
+       
+        <div class="card-body">
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="{% url 'get_todascidades'%}" class="btn btn-primary">Ver exemplo</a>
+        </div>
+    </div>
+    <div class="card text-center mt-5">
+        
+        <h5 class="card-title">Datdos atuais de uma cidade especifica</h5>
+  
+        <div class="card-body">
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="{% url 'getcidade' '3306305'%}" class="btn btn-primary">Ver exemplo</a>
+        </div>
+    </div>
+
+    <div class="card text-center mt-5">
+     
+        <h5 class="card-title">dados historicos de todas as cidades</h5>
+   
+        <div class="card-body">
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="{% url 'gethist'%}" class="btn btn-primary">Ver exemplo</a>
+        </div>
+    </div>
+
+    <div class="card text-center mt-5"> 
+
+        <h5 class="card-title">dados historicos de uma cidade especifica</h5>
+  
+        <div class="card-body">
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="{% url 'gethistcidade' '3306305'%}" class="btn btn-primary">Ver exemplo</a>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock content %}
